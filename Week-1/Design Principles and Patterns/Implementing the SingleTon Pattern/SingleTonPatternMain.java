@@ -1,4 +1,4 @@
-public class SingleTonMain {
+public class SingleTonPatternMain {
 
     static class Logger {
         private static Logger instance;
