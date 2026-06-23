@@ -1,4 +1,4 @@
-public class FinancialMain {
+public class FinancialForeCastingMain {
 
     static double forecastValue(double currentValue, double growthRate, int years) {
         if (years == 0) return currentValue;
