@@ -1,8 +1,5 @@
 SET SERVEROUTPUT ON;
 
--- ====================================================================
--- CLEANUP PREVIOUS TEST ATTEMPTS
--- ====================================================================
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE test_loans';
     EXECUTE IMMEDIATE 'DROP TABLE test_accounts';
@@ -11,10 +8,9 @@ EXCEPTION WHEN OTHERS THEN NULL;
 END;
 /
 
--- ====================================================================
--- STEP 1: CREATE COMPLETELY UNIQUE ISOLATED TEST TABLES
--- ====================================================================
-CREATE TABLE test_customers (
+
+    
+    CREATE TABLE test_customers (
     cust_id       NUMBER PRIMARY KEY,
     customer_name VARCHAR2(100),
     age           NUMBER
@@ -34,9 +30,8 @@ CREATE TABLE test_accounts (
     IsVIP         VARCHAR2(1) DEFAULT 'N'
 );
 
--- ====================================================================
--- STEP 2: INSERT CLEAN MOCK DATA
--- ====================================================================
+
+
 INSERT INTO test_customers (cust_id, customer_name, age) VALUES (101, 'Alice Jones', 65);
 INSERT INTO test_customers (cust_id, customer_name, age) VALUES (102, 'Bob Smith', 45);
 INSERT INTO test_customers (cust_id, customer_name, age) VALUES (103, 'Charlie Brown', 72);
@@ -52,11 +47,7 @@ INSERT INTO test_accounts (cust_id, balance, IsVIP) VALUES (103, 12000.00, 'N');
 COMMIT;
 
 
--- ====================================================================
--- STEP 3: RUN THE EXERCISES AGAINST THE ISOLATED TABLES
--- ====================================================================
 
--- SCENARIO 1: Senior Citizen Loan Discount
 DECLARE
     CURSOR c_senior_customers IS
         SELECT c.cust_id, l.loan_id, l.interest_rate
@@ -77,8 +68,9 @@ BEGIN
 END;
 /
 
--- SCENARIO 2: VIP Status Promotion
-DECLARE
+
+    
+    DECLARE
     CURSOR c_high_balance IS
         SELECT cust_id
         FROM test_accounts
@@ -97,8 +89,9 @@ BEGIN
 END;
 /
 
--- SCENARIO 3: Upcoming Loan Due Reminders
-DECLARE
+
+    
+    DECLARE
     CURSOR c_upcoming_loans IS
         SELECT c.customer_name, l.loan_id, l.due_date, l.amount_due
         FROM test_customers c
