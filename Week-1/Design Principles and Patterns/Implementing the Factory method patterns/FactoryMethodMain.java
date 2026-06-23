@@ -1,4 +1,4 @@
-public class FactoryMain {
+public class FactoryMethodMain {
 
     interface Document {
         void open();
