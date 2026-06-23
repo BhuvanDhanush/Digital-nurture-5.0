@@ -1,4 +1,4 @@
-public class ECommercePlatformMain {
+public class ECommerceMain {
 
     static class Product {
         int productId;
