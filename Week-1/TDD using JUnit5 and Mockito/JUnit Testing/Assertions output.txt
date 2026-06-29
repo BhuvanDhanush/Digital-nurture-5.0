@@ -1,0 +1,8 @@
+Test run finished after 45 ms
+[         1 tests found      ]
+[         1 tests started    ]
+[         1 tests successful ]
+[         0 tests failed     ]
+
+
+✅ AssertionsTest > testAssertions() PASSED
