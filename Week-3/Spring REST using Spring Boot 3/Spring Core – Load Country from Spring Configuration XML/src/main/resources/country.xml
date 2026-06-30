@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        Each <bean> tag declares one Country object to be managed by the Spring
+        IoC container.
+
+        id       -> unique identifier used to retrieve the bean via context.getBean("id")
+        class    -> fully qualified class name Spring will instantiate (no-arg constructor)
+        <property name="x" value="y"/>
+                 -> SETTER INJECTION: Spring calls setX("y") on the bean after construction
+
+        The "country" bean below is the one used by SpringLearnApplication.displayCountry()
+        as per the lab instructions. The remaining three beans show how all four
+        countries supported by the airlines website could be configured the same way.
+    -->
+
+    <!-- Primary bean used by displayCountry() -->
+    <bean id="country" class="com.cognizant.springlearn.Country">
+        <property name="code" value="IN" />
+        <property name="name" value="India" />
+    </bean>
+
+    <!-- Remaining supported countries, configured the same way -->
+    <bean id="countryUS" class="com.cognizant.springlearn.Country">
+        <property name="code" value="US" />
+        <property name="name" value="United States" />
+    </bean>
+
+    <bean id="countryDE" class="com.cognizant.springlearn.Country">
+        <property name="code" value="DE" />
+        <property name="name" value="Germany" />
+    </bean>
+
+    <bean id="countryJP" class="com.cognizant.springlearn.Country">
+        <property name="code" value="JP" />
+        <property name="name" value="Japan" />
+    </bean>
+
+</beans>
