@@ -1,10 +1,5 @@
 package com.library.repository;
 
-/**
- * Repository class responsible for data access operations
- * related to Book entities. In a real application this would
- * interact with a database; here it simulates storage.
- */
 public class BookRepository {
 
     public BookRepository() {
