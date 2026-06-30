@@ -6,19 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-/**
- * Entry point of the Spring Boot application.
- *
- * @SpringBootApplication is a convenience annotation that combines:
- *   - @Configuration      : marks this class as a source of bean definitions
- *   - @EnableAutoConfiguration : tells Spring Boot to auto-configure beans
- *                            based on the jars on the classpath (e.g. Tomcat,
- *                            Spring MVC, Jackson) — this is what removes the
- *                            need for tedious manual/XML configuration.
- *   - @ComponentScan      : tells Spring to scan this package (and sub-packages)
- *                            for components (@Component, @Service, @Repository,
- *                            @Controller, etc.)
- */
+
 @SpringBootApplication
 public class SpringLearnApplication {
 
