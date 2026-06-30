@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        <bean> definitions: each declares a Spring-managed object (a "bean") that
+        the IoC (Inversion of Control) container will create and wire together.
+
+        id    -> unique name used to look the bean up via context.getBean()
+        class -> fully qualified class name to instantiate
+    -->
+
+    <!-- 1. Engine bean - created via CONSTRUCTOR INJECTION using <constructor-arg> -->
+    <bean id="engineBean" class="com.cognizant.springlearn.beans.Engine">
+        <constructor-arg name="type" value="V8 Petrol"/>
+        <constructor-arg name="horsePower" value="450"/>
+    </bean>
+
+    <!--
+        2. Car bean - demonstrates BOTH injection types:
+           - constructor-arg ref="engineBean"  -> CONSTRUCTOR INJECTION (object reference)
+           - <property> elements               -> SETTER INJECTION (primitive values)
+        Default scope is "singleton": Spring creates ONE shared instance for this id.
+    -->
+    <bean id="carBean" class="com.cognizant.springlearn.beans.Car" scope="singleton">
+        <constructor-arg ref="engineBean"/>
+        <property name="model" value="Cognizant Cruiser"/>
+        <property name="price" value="2500000.0"/>
+    </bean>
+
+    <!--
+        3. Counter bean - scope="prototype" means a NEW instance is created
+           every time it is requested from the container via getBean().
+    -->
+    <bean id="counterBean" class="com.cognizant.springlearn.beans.Counter" scope="prototype"/>
+
+</beans>
