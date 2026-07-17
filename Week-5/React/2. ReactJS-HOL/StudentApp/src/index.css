@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f5f6fa;
+  text-align: center;
+}
+
+.App {
+  padding: 20px;
+}
+
+.App > div {
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 15px auto;
+  max-width: 500px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 20px;
+}

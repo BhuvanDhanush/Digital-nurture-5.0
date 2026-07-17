@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f5f6fa;
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-top: 60px;
+}
