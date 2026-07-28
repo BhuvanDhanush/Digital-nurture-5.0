@@ -1,0 +1,53 @@
+<h2>Available Courses</h2>
+
+<p *ngIf="isLoading$ | async">
+  Loading courses...
+</p>
+
+<p
+  *ngIf="errorMessage$ | async as errorMessage"
+  style="color:red;">
+  {{ errorMessage }}
+</p>
+
+<div
+  *ngIf="{
+    courses: courses$ | async,
+    isLoading: isLoading$ | async,
+    errorMessage: errorMessage$ | async
+  } as vm">
+
+  <div *ngIf="!vm.isLoading && !vm.errorMessage; else noCourses">
+
+    <div
+      *ngFor="let course of vm.courses"
+      style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
+
+      <app-course-card
+        [course]="course"
+        (enrollRequested)="onEnroll($event)">
+      </app-course-card>
+
+      <button
+        type="button"
+        (click)="viewCourse(course.id)">
+        View Details
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #noCourses>
+
+  <p *ngIf="!(errorMessage$ | async)">
+    No courses available.
+  </p>
+
+</ng-template>
+
+<p *ngIf="selectedCourseId">
+  Selected Course ID: {{ selectedCourseId }}
+</p>
