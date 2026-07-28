@@ -1,0 +1,68 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Angular Fundamentals",
+      "code": "ANG101",
+      "credits": 4,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": 2,
+      "name": "TypeScript",
+      "code": "TS201",
+      "credits": 3,
+      "gradeStatus": "failed"
+    },
+    {
+      "id": 3,
+      "name": "Web Development",
+      "code": "WEB301",
+      "credits": 4,
+      "gradeStatus": "pending"
+    },
+    {
+      "id": 4,
+      "name": "Database Systems",
+      "code": "DB401",
+      "credits": 3,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": 5,
+      "name": "Cloud Computing",
+      "code": "CC501",
+      "credits": 4,
+      "gradeStatus": "pending"
+    }
+  ],
+
+  "students": [
+    {
+      "id": 1,
+      "name": "Dhinesh",
+      "email": "dhinesh@example.com",
+      "courseId": 1
+    },
+    {
+      "id": 2,
+      "name": "Asha",
+      "email": "asha@example.com",
+      "courseId": 2
+    },
+    {
+      "id": 3,
+      "name": "Rahul",
+      "email": "rahul@example.com",
+      "courseId": 1
+    }
+  ],
+
+  "enrollments": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "courseId": 1
+    }
+  ]
+}

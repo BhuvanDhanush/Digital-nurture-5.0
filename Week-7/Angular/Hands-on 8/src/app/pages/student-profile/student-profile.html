@@ -1,0 +1,13 @@
+<h2>Student Profile</h2>
+
+<h3>Enrolled Courses</h3>
+
+<ul>
+  @for (course of enrollmentService.getEnrolledCourses(); track course.id) {
+    <li>
+      {{ course.name }} ({{ course.code }})
+    </li>
+  } @empty {
+    <li>No enrolled courses.</li>
+  }
+</ul>
