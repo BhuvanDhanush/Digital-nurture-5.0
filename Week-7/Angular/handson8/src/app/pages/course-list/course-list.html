@@ -1,0 +1,44 @@
+<h2>Available Courses</h2>
+
+<p *ngIf="isLoading">
+  Loading courses...
+</p>
+
+<p
+  *ngIf="errorMessage"
+  style="color:red;">
+  {{ errorMessage }}
+</p>
+
+<div *ngIf="!isLoading && !errorMessage; else noCourses">
+
+  <div
+    *ngFor="let course of courses; trackBy: trackByCourseId"
+    style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
+
+    <app-course-card
+      [course]="course"
+      (enrollRequested)="onEnroll($event)">
+    </app-course-card>
+
+    <button
+      type="button"
+      (click)="viewCourse(course.id)">
+      View Details
+    </button>
+
+  </div>
+
+</div>
+
+<ng-template #noCourses>
+
+  <p *ngIf="!errorMessage">
+    No courses available.
+  </p>
+
+</ng-template>
+
+<p *ngIf="selectedCourseId">
+  Selected Course ID: {{ selectedCourseId }}
+</p>
