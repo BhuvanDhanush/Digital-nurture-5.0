@@ -1,0 +1,19 @@
+.card{
+    border:1px solid #ccc;
+    border-radius:6px;
+    padding:15px;
+    margin:15px 0;
+    transition:0.3s;
+}
+
+.card--enrolled{
+    background:#e8ffe8;
+}
+
+.card--full{
+    box-shadow:0 0 8px #999;
+}
+
+.expanded{
+    min-height:220px;
+}
